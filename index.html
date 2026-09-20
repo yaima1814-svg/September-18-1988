@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Happy Birthday Mama! ❤️</title>
+<title>¡Felicidades Mama! ❤️</title>
 
 <style>
-
 * {
     box-sizing: border-box;
 }
@@ -19,730 +17,561 @@ html {
 
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #ffd6e7, #eee1ff, #fff0c9);
-    color: #542742;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3, #ffd1dc);
+    color: white;
     text-align: center;
     overflow-x: hidden;
 }
 
-/* NAVIGATION */
+/* =========================
+   🔒 PASSWORD SCREEN
+========================= */
+
+#lockScreen {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #8e1537, #e91e63, #ff8fab);
+    padding: 20px;
+}
+
+.lockBox {
+    background: white;
+    color: #8e1537;
+    width: 380px;
+    max-width: 100%;
+    padding: 40px 30px;
+    border-radius: 25px;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.35);
+}
+
+.lockIcon {
+    font-size: 60px;
+}
+
+.lockBox h1 {
+    font-size: 32px;
+    margin: 15px 0 10px;
+}
+
+.lockBox p {
+    color: #555;
+    font-size: 17px;
+}
+
+#accessCode {
+    width: 100%;
+    padding: 15px;
+    margin-top: 10px;
+    border: 2px solid #e91e63;
+    border-radius: 12px;
+    font-size: 20px;
+    text-align: center;
+    outline: none;
+}
+
+#enterButton {
+    width: 100%;
+    padding: 15px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 12px;
+    background: #e91e63;
+    color: white;
+    font-size: 19px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#enterButton:hover {
+    background: #c2185b;
+}
+
+#wrongCode {
+    color: red;
+    font-weight: bold;
+    min-height: 22px;
+}
+
+/* =========================
+   🎂 MAIN WEBSITE
+========================= */
+
+header {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    background: linear-gradient(
+        rgba(180, 20, 70, 0.45),
+        rgba(255, 80, 130, 0.35)
+    );
+}
+
+header h1 {
+    font-size: clamp(45px, 9vw, 90px);
+    margin: 10px 0;
+    text-shadow: 3px 3px 10px rgba(0,0,0,0.25);
+}
+
+header h2 {
+    font-size: clamp(25px, 5vw, 45px);
+    margin: 10px 0;
+}
+
+header p {
+    font-size: clamp(22px, 4vw, 32px);
+    margin: 10px;
+    font-weight: bold;
+}
+
+.loveMessage {
+    font-size: clamp(25px, 5vw, 40px);
+    margin-top: 20px;
+    font-weight: bold;
+}
 
 nav {
     position: sticky;
     top: 0;
-    z-index: 500;
-    background: #5b315f;
+    z-index: 1000;
+    background: rgba(130, 10, 55, 0.9);
     padding: 15px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    backdrop-filter: blur(8px);
 }
 
 nav a {
     color: white;
     text-decoration: none;
-    margin: 0 15px;
     font-weight: bold;
-    font-size: 16px;
+    margin: 0 12px;
 }
 
-nav a:hover {
-    color: #ffd3ea;
+section {
+    padding: 70px 20px;
+    max-width: 950px;
+    margin: auto;
 }
-
-/* HERO */
-
-.hero {
-    min-height: 100vh;
-    padding: 80px 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-}
-
-.decorations {
-    font-size: 35px;
-    margin-bottom: 15px;
-}
-
-.hero h1 {
-    font-size: 65px;
-    margin: 5px;
-    animation: bounce 2s infinite;
-}
-
-.hero h2 {
-    font-size: 55px;
-    margin: 0 0 20px;
-    color: #a64d87;
-}
-
-.date {
-    font-size: 23px;
-    font-weight: bold;
-    margin-bottom: 20px;
-}
-
-.subtitle {
-    font-size: 21px;
-    line-height: 1.7;
-    max-width: 750px;
-}
-
-.birthday-button {
-    border: none;
-    border-radius: 50px;
-    padding: 17px 32px;
-    font-size: 19px;
-    font-weight: bold;
-    cursor: pointer;
-    background: #e96b9c;
-    color: white;
-    margin: 15px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    transition: 0.2s;
-}
-
-.birthday-button:hover {
-    transform: scale(1.08);
-}
-
-/* CARDS */
 
 .card {
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 40px 30px;
-    background: rgba(255,255,255,0.88);
-    border-radius: 30px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    background: rgba(255,255,255,0.17);
+    border-radius: 28px;
+    padding: 40px 25px;
+    margin: 25px 0;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+    backdrop-filter: blur(8px);
 }
 
 .card h2 {
     font-size: 35px;
-    color: #8c477e;
+    margin-bottom: 20px;
 }
 
-.letter {
-    font-size: 20px;
+.card p {
+    font-size: 19px;
     line-height: 1.8;
 }
 
-/* MUSIC */
-
-.music-box {
-    max-width: 650px;
-    margin: auto;
+.bigHeart {
+    font-size: 75px;
+    animation: heartbeat 1.3s infinite;
 }
 
-.music-box h3 {
-    font-size: 28px;
-}
-
-.youtube-player {
-    width: 100%;
-    max-width: 560px;
-    aspect-ratio: 16 / 9;
-    border: none;
-    border-radius: 20px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-}
-
-/* PHOTOS */
-
-.photos {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 25px;
-}
-
-.photo-card {
-    width: 250px;
-    background: white;
-    padding: 12px;
-    border-radius: 22px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-    transition: 0.2s;
-}
-
-.photo-card:hover {
-    transform: translateY(-8px) rotate(1deg);
-}
-
-.photo-card img {
-    width: 100%;
-    height: 230px;
-    object-fit: cover;
-    border-radius: 16px;
-    display: block;
-}
-
-.photo-caption {
-    padding: 15px 5px 8px;
-    font-size: 17px;
-    font-weight: bold;
-}
-
-/* CAKE */
-
-.cake {
-    font-size: 100px;
-    animation: float 2s ease-in-out infinite;
-}
-
-/* SURPRISE */
-
-.surprise {
-    display: none;
-    font-size: 27px;
-    padding: 30px;
-    animation: appear 0.8s ease;
-}
-
-/* FLOATING HEARTS */
-
-.heart {
-    position: fixed;
-    bottom: -50px;
-    font-size: 25px;
-    animation: rise 6s linear forwards;
-    pointer-events: none;
-    z-index: 999;
-}
-
-/* FOOTER */
-
-footer {
-    padding: 40px 20px;
-    font-size: 18px;
-}
-
-/* ANIMATIONS */
-
-@keyframes bounce {
-
+@keyframes heartbeat {
     0%, 100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-12px);
-    }
-
-}
-
-@keyframes float {
-
-    0%, 100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-15px);
-    }
-
-}
-
-@keyframes appear {
-
-    from {
-        opacity: 0;
-        transform: scale(0.8);
-    }
-
-    to {
-        opacity: 1;
         transform: scale(1);
     }
 
+    50% {
+        transform: scale(1.2);
+    }
 }
 
-@keyframes rise {
+/* 🎵 MUSIC */
 
-    from {
-        transform: translateY(0) rotate(0deg);
-        opacity: 1;
-    }
+.youtube-player {
+    width: 100%;
+    max-width: 750px;
+    height: 420px;
+    border: none;
+    border-radius: 20px;
+    margin-top: 20px;
+}
 
+.youtube-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 25px;
+    background: white;
+    color: #d81b60;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: bold;
+}
+
+/* 🎁 SURPRISE */
+
+.surpriseButton {
+    padding: 17px 30px;
+    border: none;
+    border-radius: 15px;
+    background: white;
+    color: #d81b60;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#surpriseMessage {
+    display: none;
+    margin-top: 25px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+/* 👨‍👩‍👧‍👦 NAMES */
+
+.names {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.name {
+    background: rgba(255,255,255,0.2);
+    padding: 20px;
+    border-radius: 18px;
+    font-size: 23px;
+    font-weight: bold;
+}
+
+/* 🎉 CONFETTI */
+
+.confetti {
+    position: fixed;
+    top: -20px;
+    font-size: 25px;
+    pointer-events: none;
+    animation: fall linear forwards;
+    z-index: 5000;
+}
+
+@keyframes fall {
     to {
-        transform: translateY(-110vh) rotate(360deg);
-        opacity: 0;
+        transform: translateY(110vh) rotate(720deg);
     }
-
 }
 
-/* PHONE */
+/* 📱 PHONE */
 
 @media (max-width: 600px) {
 
+    header {
+        min-height: 80vh;
+    }
+
     nav a {
-        margin: 0 6px;
-        font-size: 13px;
-    }
-
-    .hero h1 {
-        font-size: 40px;
-    }
-
-    .hero h2 {
-        font-size: 38px;
-    }
-
-    .subtitle {
-        font-size: 18px;
+        margin: 0 5px;
+        font-size: 14px;
     }
 
     .card {
-        margin: 25px 12px;
-        padding: 25px 15px;
+        padding: 30px 18px;
     }
 
-    .card h2 {
-        font-size: 28px;
+    .youtube-player {
+        height: 220px;
     }
 
-    .photo-card {
-        width: 90%;
-        max-width: 300px;
+    .names {
+        grid-template-columns: 1fr;
     }
-
 }
-
 </style>
 </head>
 
 <body>
 
-<!-- NAVIGATION -->
+<!-- 🔒 PASSWORD SCREEN -->
+
+<div id="lockScreen">
+
+    <div class="lockBox">
+
+        <div class="lockIcon">🔒</div>
+
+        <h1>Private Birthday Surprise</h1>
+
+        <p>
+            Enter the special code to open Mom's birthday website.
+        </p>
+
+        <input
+            type="password"
+            id="accessCode"
+            placeholder="Enter code"
+            inputmode="numeric"
+        >
+
+        <button id="enterButton" onclick="unlockWebsite()">
+            🔓 ENTER
+        </button>
+
+        <p id="wrongCode"></p>
+
+    </div>
+
+</div>
+
+
+<!-- 🎂 MAIN WEBSITE -->
+
+<header id="home">
+
+    <div class="bigHeart">❤️</div>
+
+    <h1>🎉 HAPPY BIRTHDAY MAMA! 🎉</h1>
+
+    <h2>September 18th, 1988</h2>
+
+    <p>You’re Now 38 Years Young! 💕</p>
+
+    <div class="loveMessage">
+        ¡FELICIDADES MAMA! ❤️
+    </div>
+
+    <div class="loveMessage">
+        WE LOVE YOU! 💖
+    </div>
+
+</header>
+
 
 <nav>
 
-<a href="#home">Home</a>
-<a href="#message">Message</a>
-<a href="#music">Music</a>
-<a href="#photos">Photos</a>
-<a href="#amazing">Why You're Amazing</a>
+    <a href="#home">🏠 Inicio</a>
+
+    <a href="#message">💌 Mensaje</a>
+
+    <a href="#music">🎵 Música</a>
+
+    <a href="#family">❤️ De Nosotros</a>
 
 </nav>
 
 
-<!-- HERO -->
+<!-- 💌 MESSAGE -->
 
-<section class="hero" id="home">
+<section id="message">
 
-<div class="decorations">
-🦋 💐 👑 💖 🌷 ✨
-</div>
+    <div class="card">
 
-<div class="cake">
-🎂
-</div>
+        <h2>💌 Querida Mamá</h2>
 
-<h1>
-🎉 Happy Birthday
-</h1>
+        <p>
+            ¡Feliz cumpleaños, Mamá! ❤️
+        </p>
 
-<h2>
-Mama! ❤️
-</h2>
+        <p>
+            Hoy celebramos a una persona muy especial.
+            Esperamos que tengas un día lleno de felicidad,
+            amor, risas y muchos momentos increíbles.
+        </p>
 
-<div class="date">
-September 18th, 1988 Your Now 38 Years Young! !FELICIDADES MAMA! WE LOVE YOU!
-</div>
+        <p>
+            Gracias por todo lo que haces y por estar siempre
+            ahí para nosotros.
+        </p>
 
-<p class="subtitle">
+        <p>
+            Te queremos muchísimo. ❤️
+        </p>
 
-Today is all about celebrating YOU! (From matthew Angelo y Mario para mama Yaima) 💖
+        <div class="bigHeart">💖</div>
 
-Thank you for everything you do,
-all the love you give,
-and all the wonderful memories we make together.
-
-</p>
-
-<button
-class="birthday-button"
-onclick="startCelebration()">
-
-🎁 Open Your Birthday Surprise 🎁
-
-</button>
-
-<div id="surprise" class="surprise">
-
-💖 I LOVE YOU, MOM! 💖
-
-<br><br>
-
-You are one of the most important people in my life.
-
-<br><br>
-
-I hope your birthday is filled with happiness,
-love, laughter, and amazing memories! 🌷🎂✨
-
-</div>
+    </div>
 
 </section>
 
 
-<!-- MESSAGE -->
+<!-- 🎵 MUSIC -->
 
-<div class="card" id="message">
+<section id="music">
 
-<h2>
-💌 A Special Birthday Message
-</h2>
+    <div class="card">
 
-<div class="letter">
+        <h2>🎵 Tu Canción De Cumpleaños 🎵</h2>
 
-Dear Mama, ❤️
+        <p>
+            ¡Esta canción es especialmente para ti, Mamá! ❤️
+        </p>
 
-<br><br>
+        <iframe
+            class="youtube-player"
+            src="https://www.youtube.com/embed/eERommmEuug"
+            title="Mama's Birthday Song"
+            allow="autoplay; encrypted-media"
+            allowfullscreen>
+        </iframe>
 
-Happy Birthday!
+        <br>
 
-<br><br>
+        <a
+            class="youtube-button"
+            href="https://www.youtube.com/watch?v=eERommmEuug&list=RDeERommmEuug&start_radio=1"
+            target="_blank"
+            rel="noopener noreferrer">
+            ▶️ OPEN SONG ON YOUTUBE
+        </a>
 
-I want you to know how much I appreciate you.
+    </div>
 
-Thank you for everything you do,
-all the laughs,
-all the memories,
-and all the love.
+</section>
 
-<br><br>
 
-You make so many ordinary days
-feel special.
+<!-- ❤️ FAMILY -->
 
-<br><br>
+<section id="family">
 
-I hope today brings you lots of happiness,
-smiles, laughter,
-and beautiful memories.
+    <div class="card">
 
-<br><br>
+        <h2>💖 Un Regalo De Parte De Nosotros 💖</h2>
 
-I love you so much! ❤️
+        <p>
+            Con muchísimo amor, este cumpleaños es de parte de:
+        </p>
 
-<br><br>
+        <div class="names">
 
-Happy Birthday, Mama! 🎂🎉💐
+            <div class="name">❤️ Matthew</div>
 
-</div>
+            <div class="name">💙 Angelo</div>
 
-</div>
+            <div class="name">💗 Yaima</div>
 
+            <div class="name">💚 Mario</div>
 
-<!-- MUSIC -->
+        </div>
 
-<div class="card" id="music">
+        <p style="margin-top:30px;">
+            ¡TE AMAMOS, MAMÁ! ❤️
+        </p>
 
-<h2>
-🎵 Mama's Birthday Song
-</h2>
+    </div>
 
-<div class="music-box">
 
-<p class="subtitle">
+    <div class="card">
 
-Press play and enjoy your birthday song! 🎂💖
+        <h2>🎁 ¡SORPRESA! 🎁</h2>
 
-</p>
+        <p>
+            Presiona el botón para recibir un mensaje especial.
+        </p>
 
-<iframe
-class="youtube-player"
-src="https://www.youtube.com/embed/eERommmEuug"
-title="Mama's Birthday Song"
-allow="autoplay; encrypted-media"
-allowfullscreen>
-</iframe>
+        <button
+            class="surpriseButton"
+            onclick="showSurprise()">
+            🎉 OPEN SURPRISE 🎉
+        </button>
 
-</div>
+        <div id="surpriseMessage">
+            ❤️ ¡FELICIDADES MAMA! ❤️<br><br>
+            🎂 ¡38 AÑOS! 🎂<br><br>
+            💕 WE LOVE YOU SO MUCH! 💕
+        </div>
 
-</div>
+    </div>
 
-
-<!-- PHOTOS -->
-
-<div class="card" id="photos">
-
-<h2>
-📸 Our Special Moments
-</h2>
-
-<p class="subtitle">
-
-Some special memories with Mama. ❤️
-
-</p>
-
-<div class="photos">
-
-<div class="photo-card">
-
-<img
-src="photo1.png"
-alt="Special memory 1">
-
-<div class="photo-caption">
-Little moments... big love. ♡
-</div>
-
-</div>
-
-
-<div class="photo-card">
-
-<img
-src="photo2.png"
-alt="Special memory 2">
-
-<div class="photo-caption">
-A beautiful memory. ♡
-</div>
-
-</div>
-
-
-<div class="photo-card">
-
-<img
-src="photo3.png"
-alt="Special memory 3">
-
-<div class="photo-caption">
-A memory to treasure forever. ♡
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-
-<!-- WHY AMAZING -->
-
-<div class="card" id="amazing">
-
-<h2>
-🌷 Why You're Amazing
-</h2>
-
-<div class="letter">
-
-❤️ You care so much
-
-<br>
-
-❤️ You make people smile
-
-<br>
-
-❤️ You are always there
-
-<br>
-
-❤️ You make wonderful memories
-
-<br>
-
-❤️ You give so much love
-
-<br>
-
-❤️ You are an amazing mom
-
-<br>
-
-❤️ You make our family special
-
-</div>
-
-</div>
-
-
-<!-- FINAL SURPRISE -->
-
-<div class="card">
-
-<h2>
-🎈 One More Surprise
-</h2>
-
-<p class="subtitle">
-
-Click the button for a birthday celebration! 🎉
-
-</p>
-
-<button
-class="birthday-button"
-onclick="bigCelebration()">
-
-🎉 CELEBRATE! 🎉
-
-</button>
-
-</div>
-
-
-<!-- FOOTER -->
-
-<footer>
-
-Made with ❤️ especially for Mama
-
-<br><br>
-
-🎂 🎈 💐 ❤️ 🎁 🦋 ✨
-
-<br><br>
-
-Today is your day, Mama! ♡
-
-</footer>
+</section>
 
 
 <script>
 
-/* FIRST SURPRISE */
+/* 🔒 PASSWORD */
 
-function startCelebration() {
+function unlockWebsite() {
 
-    document.getElementById("surprise").style.display = "block";
+    const code = document.getElementById("accessCode").value;
 
-    createHearts(30);
+    if (code === "18149181988") {
 
-    window.scrollTo({
+        document.getElementById("lockScreen").style.display = "none";
 
-        top: document.getElementById("surprise").offsetTop - 150,
+        startConfetti();
 
-        behavior: "smooth"
+    } else {
 
-    });
-
-}
-
-
-/* BIG CELEBRATION */
-
-function bigCelebration() {
-
-    createHearts(70);
-
-    createConfetti(100);
-
-}
-
-
-/* HEARTS */
-
-function createHearts(number) {
-
-    for (let i = 0; i < number; i++) {
-
-        const heart = document.createElement("div");
-
-        heart.className = "heart";
-
-        const hearts = [
-            "❤️",
-            "💖",
-            "💕",
-            "💗",
-            "💐",
-            "✨",
-            "🌷"
-        ];
-
-        heart.innerHTML =
-            hearts[Math.floor(Math.random() * hearts.length)];
-
-        heart.style.left =
-            Math.random() * 100 + "vw";
-
-        heart.style.animationDuration =
-            (3 + Math.random() * 4) + "s";
-
-        heart.style.fontSize =
-            (18 + Math.random() * 25) + "px";
-
-        document.body.appendChild(heart);
-
-        setTimeout(() => {
-
-            heart.remove();
-
-        }, 7000);
+        document.getElementById("wrongCode").textContent =
+            "❌ Código incorrecto. Inténtalo otra vez.";
 
     }
 
 }
 
 
-/* CONFETTI */
+/* ENTER KEY */
 
-function createConfetti(number) {
+document.getElementById("accessCode").addEventListener("keydown", function(event) {
 
-    for (let i = 0; i < number; i++) {
+    if (event.key === "Enter") {
+
+        unlockWebsite();
+
+    }
+
+});
+
+
+/* 🎁 SURPRISE */
+
+function showSurprise() {
+
+    document.getElementById("surpriseMessage").style.display = "block";
+
+    startConfetti();
+
+}
+
+
+/* 🎉 CONFETTI */
+
+function startConfetti() {
+
+    const emojis = ["🎉", "🎊", "❤️", "💕", "💖", "🎂", "✨", "🌸"];
+
+    for (let i = 0; i < 45; i++) {
 
         const piece = document.createElement("div");
 
-        piece.innerHTML = "🎉";
+        piece.className = "confetti";
 
-        piece.style.position = "fixed";
+        piece.textContent =
+            emojis[Math.floor(Math.random() * emojis.length)];
 
         piece.style.left =
             Math.random() * 100 + "vw";
 
-        piece.style.top = "-30px";
+        piece.style.animationDuration =
+            (3 + Math.random() * 4) + "s";
 
         piece.style.fontSize =
-            (15 + Math.random() * 25) + "px";
-
-        piece.style.zIndex = "1000";
-
-        piece.style.pointerEvents = "none";
+            (18 + Math.random() * 18) + "px";
 
         document.body.appendChild(piece);
 
-        const fall = piece.animate(
-
-            [
-
-                {
-                    transform:
-                    "translateY(0) rotate(0deg)"
-                },
-
-                {
-                    transform:
-                    "translateY(110vh) rotate(720deg)"
-                }
-
-            ],
-
-            {
-
-                duration:
-                2500 + Math.random() * 2500,
-
-                easing: "linear"
-
-            }
-
-        );
-
-        fall.onfinish = () => {
+        setTimeout(() => {
 
             piece.remove();
 
-        };
+        }, 7000);
 
     }
 
