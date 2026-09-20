@@ -24,9 +24,7 @@ body {
     overflow-x: hidden;
 }
 
-/* =========================
-   🔒 PASSWORD SCREEN
-========================= */
+/* PASSWORD SCREEN */
 
 #lockScreen {
     position: fixed;
@@ -63,7 +61,7 @@ body {
     font-size: 17px;
 }
 
-#accessCode {1814}
+#accessCode {
     width: 100%;
     padding: 15px;
     margin-top: 10px;
@@ -97,9 +95,7 @@ body {
     min-height: 22px;
 }
 
-/* =========================
-   🎂 MAIN WEBSITE
-========================= */
+/* MAIN WEBSITE */
 
 header {
     min-height: 90vh;
@@ -193,7 +189,7 @@ section {
     }
 }
 
-/* 🎵 MUSIC */
+/* MUSIC */
 
 .youtube-player {
     width: 100%;
@@ -215,7 +211,7 @@ section {
     font-weight: bold;
 }
 
-/* 🎁 SURPRISE */
+/* SURPRISE */
 
 .surpriseButton {
     padding: 17px 30px;
@@ -236,7 +232,7 @@ section {
     font-weight: bold;
 }
 
-/* 👨‍👩‍👧‍👦 NAMES */
+/* NAMES */
 
 .names {
     display: grid;
@@ -253,7 +249,7 @@ section {
     font-weight: bold;
 }
 
-/* 🎉 CONFETTI */
+/* CONFETTI */
 
 .confetti {
     position: fixed;
@@ -270,7 +266,7 @@ section {
     }
 }
 
-/* 📱 PHONE */
+/* PHONE */
 
 @media (max-width: 600px) {
 
@@ -300,7 +296,7 @@ section {
 
 <body>
 
-<!-- 🔒 PASSWORD SCREEN -->
+<!-- PASSWORD SCREEN -->
 
 <div id="lockScreen">
 
@@ -332,7 +328,7 @@ section {
 </div>
 
 
-<!-- 🎂 MAIN WEBSITE -->
+<!-- MAIN WEBSITE -->
 
 <header id="home">
 
@@ -368,7 +364,7 @@ section {
 </nav>
 
 
-<!-- 💌 MESSAGE -->
+<!-- MESSAGE -->
 
 <section id="message">
 
@@ -402,7 +398,7 @@ section {
 </section>
 
 
-<!-- 🎵 MUSIC -->
+<!-- MUSIC -->
 
 <section id="music">
 
@@ -437,7 +433,7 @@ section {
 </section>
 
 
-<!-- ❤️ FAMILY -->
+<!-- FAMILY -->
 
 <section id="family">
 
@@ -483,9 +479,13 @@ section {
         </button>
 
         <div id="surpriseMessage">
-            ❤️ ¡FELICIDADES MAMA! ❤️<br><br>
-            🎂 ¡38 AÑOS! 🎂<br><br>
+
+            ❤️ ¡FELICIDADES MAMA! ❤️
+            <br><br>
+            🎂 ¡38 AÑOS! 🎂
+            <br><br>
             💕 WE LOVE YOU SO MUCH! 💕
+
         </div>
 
     </div>
@@ -495,13 +495,13 @@ section {
 
 <script>
 
-/* 🔒 PASSWORD */
+/* PASSWORD */
 
 function unlockWebsite() {
 
-    const code = document.getElementById("accessCode").value;
+    const code = document.getElementById("accessCode").value
 
-    if (code === "1814") {
+    if (code === "1814YM") {
 
         document.getElementById("lockScreen").style.display = "none";
 
@@ -530,7 +530,7 @@ document.getElementById("accessCode").addEventListener("keydown", function(event
 });
 
 
-/* 🎁 SURPRISE */
+/* SURPRISE */
 
 function showSurprise() {
 
@@ -541,7 +541,7 @@ function showSurprise() {
 }
 
 
-/* 🎉 CONFETTI */
+/* CONFETTI */
 
 function startConfetti() {
 
