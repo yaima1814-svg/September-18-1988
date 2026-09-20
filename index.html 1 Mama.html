@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday Mama! ❤️</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ffd6e7, #eee1ff, #fff0c9);
+    color: #542742;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+/* NAVIGATION */
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 500;
+    background: #5b315f;
+    padding: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+nav a:hover {
+    color: #ffd3ea;
+}
+
+/* HERO */
+
+.hero {
+    min-height: 100vh;
+    padding: 80px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.decorations {
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: 65px;
+    margin: 5px;
+    animation: bounce 2s infinite;
+}
+
+.hero h2 {
+    font-size: 55px;
+    margin: 0 0 20px;
+    color: #a64d87;
+}
+
+.date {
+    font-size: 23px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.subtitle {
+    font-size: 21px;
+    line-height: 1.7;
+    max-width: 750px;
+}
+
+.birthday-button {
+    border: none;
+    border-radius: 50px;
+    padding: 17px 32px;
+    font-size: 19px;
+    font-weight: bold;
+    cursor: pointer;
+    background: #e96b9c;
+    color: white;
+    margin: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    transition: 0.2s;
+}
+
+.birthday-button:hover {
+    transform: scale(1.08);
+}
+
+/* CARDS */
+
+.card {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 40px 30px;
+    background: rgba(255,255,255,0.88);
+    border-radius: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+}
+
+.card h2 {
+    font-size: 35px;
+    color: #8c477e;
+}
+
+.letter {
+    font-size: 20px;
+    line-height: 1.8;
+}
+
+/* MUSIC */
+
+.music-box {
+    max-width: 650px;
+    margin: auto;
+}
+
+.music-box h3 {
+    font-size: 28px;
+}
+
+.youtube-player {
+    width: 100%;
+    max-width: 560px;
+    aspect-ratio: 16 / 9;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* PHOTOS */
+
+.photos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+}
+
+.photo-card {
+    width: 250px;
+    background: white;
+    padding: 12px;
+    border-radius: 22px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    transition: 0.2s;
+}
+
+.photo-card:hover {
+    transform: translateY(-8px) rotate(1deg);
+}
+
+.photo-card img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 16px;
+    display: block;
+}
+
+.photo-caption {
+    padding: 15px 5px 8px;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+/* CAKE */
+
+.cake {
+    font-size: 100px;
+    animation: float 2s ease-in-out infinite;
+}
+
+/* SURPRISE */
+
+.surprise {
+    display: none;
+    font-size: 27px;
+    padding: 30px;
+    animation: appear 0.8s ease;
+}
+
+/* FLOATING HEARTS */
+
+.heart {
+    position: fixed;
+    bottom: -50px;
+    font-size: 25px;
+    animation: rise 6s linear forwards;
+    pointer-events: none;
+    z-index: 999;
+}
+
+/* FOOTER */
+
+footer {
+    padding: 40px 20px;
+    font-size: 18px;
+}
+
+/* ANIMATIONS */
+
+@keyframes bounce {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+
+}
+
+@keyframes float {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+}
+
+@keyframes appear {
+
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+
+@keyframes rise {
+
+    from {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+
+}
+
+/* PHONE */
+
+@media (max-width: 600px) {
+
+    nav a {
+        margin: 0 6px;
+        font-size: 13px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .hero h2 {
+        font-size: 38px;
+    }
+
+    .subtitle {
+        font-size: 18px;
+    }
+
+    .card {
+        margin: 25px 12px;
+        padding: 25px 15px;
+    }
+
+    .card h2 {
+        font-size: 28px;
+    }
+
+    .photo-card {
+        width: 90%;
+        max-width: 300px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<nav>
+
+<a href="#home">Home</a>
+<a href="#message">Message</a>
+<a href="#music">Music</a>
+<a href="#photos">Photos</a>
+<a href="#amazing">Why You're Amazing</a>
+
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+<div class="decorations">
+🦋 💐 👑 💖 🌷 ✨
+</div>
+
+<div class="cake">
+🎂
+</div>
+
+<h1>
+🎉 Happy Birthday
+</h1>
+
+<h2>
+Mama! ❤️
+</h2>
+
+<div class="date">
+September 18th, 1988 Your Now 38 Years Young! !FELICIDADES MAMA! WE LOVE YOU!
+</div>
+
+<p class="subtitle">
+
+Today is all about celebrating YOU! (From matthew Angelo y Mario para mama Yaima) 💖
+
+Thank you for everything you do,
+all the love you give,
+and all the wonderful memories we make together.
+
+</p>
+
+<button
+class="birthday-button"
+onclick="startCelebration()">
+
+🎁 Open Your Birthday Surprise 🎁
+
+</button>
+
+<div id="surprise" class="surprise">
+
+💖 I LOVE YOU, MOM! 💖
+
+<br><br>
+
+You are one of the most important people in my life.
+
+<br><br>
+
+I hope your birthday is filled with happiness,
+love, laughter, and amazing memories! 🌷🎂✨
+
+</div>
+
+</section>
+
+
+<!-- MESSAGE -->
+
+<div class="card" id="message">
+
+<h2>
+💌 A Special Birthday Message
+</h2>
+
+<div class="letter">
+
+Dear Mama, ❤️
+
+<br><br>
+
+Happy Birthday!
+
+<br><br>
+
+I want you to know how much I appreciate you.
+
+Thank you for everything you do,
+all the laughs,
+all the memories,
+and all the love.
+
+<br><br>
+
+You make so many ordinary days
+feel special.
+
+<br><br>
+
+I hope today brings you lots of happiness,
+smiles, laughter,
+and beautiful memories.
+
+<br><br>
+
+I love you so much! ❤️
+
+<br><br>
+
+Happy Birthday, Mama! 🎂🎉💐
+
+</div>
+
+</div>
+
+
+<!-- MUSIC -->
+
+<div class="card" id="music">
+
+<h2>
+🎵 Mama's Birthday Song
+</h2>
+
+<div class="music-box">
+
+<p class="subtitle">
+
+Press play and enjoy your birthday song! 🎂💖
+
+</p>
+
+<iframe
+class="youtube-player"
+src="https://www.youtube.com/embed/eERommmEuug"
+title="Mama's Birthday Song"
+allow="autoplay; encrypted-media"
+allowfullscreen>
+</iframe>
+
+</div>
+
+</div>
+
+
+<!-- PHOTOS -->
+
+<div class="card" id="photos">
+
+<h2>
+📸 Our Special Moments
+</h2>
+
+<p class="subtitle">
+
+Some special memories with Mama. ❤️
+
+</p>
+
+<div class="photos">
+
+<div class="photo-card">
+
+<img
+src="photo1.png"
+alt="Special memory 1">
+
+<div class="photo-caption">
+Little moments... big love. ♡
+</div>
+
+</div>
+
+
+<div class="photo-card">
+
+<img
+src="photo2.png"
+alt="Special memory 2">
+
+<div class="photo-caption">
+A beautiful memory. ♡
+</div>
+
+</div>
+
+
+<div class="photo-card">
+
+<img
+src="photo3.png"
+alt="Special memory 3">
+
+<div class="photo-caption">
+A memory to treasure forever. ♡
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- WHY AMAZING -->
+
+<div class="card" id="amazing">
+
+<h2>
+🌷 Why You're Amazing
+</h2>
+
+<div class="letter">
+
+❤️ You care so much
+
+<br>
+
+❤️ You make people smile
+
+<br>
+
+❤️ You are always there
+
+<br>
+
+❤️ You make wonderful memories
+
+<br>
+
+❤️ You give so much love
+
+<br>
+
+❤️ You are an amazing mom
+
+<br>
+
+❤️ You make our family special
+
+</div>
+
+</div>
+
+
+<!-- FINAL SURPRISE -->
+
+<div class="card">
+
+<h2>
+🎈 One More Surprise
+</h2>
+
+<p class="subtitle">
+
+Click the button for a birthday celebration! 🎉
+
+</p>
+
+<button
+class="birthday-button"
+onclick="bigCelebration()">
+
+🎉 CELEBRATE! 🎉
+
+</button>
+
+</div>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+Made with ❤️ especially for Mama
+
+<br><br>
+
+🎂 🎈 💐 ❤️ 🎁 🦋 ✨
+
+<br><br>
+
+Today is your day, Mama! ♡
+
+</footer>
+
+
+<script>
+
+/* FIRST SURPRISE */
+
+function startCelebration() {
+
+    document.getElementById("surprise").style.display = "block";
+
+    createHearts(30);
+
+    window.scrollTo({
+
+        top: document.getElementById("surprise").offsetTop - 150,
+
+        behavior: "smooth"
+
+    });
+
+}
+
+
+/* BIG CELEBRATION */
+
+function bigCelebration() {
+
+    createHearts(70);
+
+    createConfetti(100);
+
+}
+
+
+/* HEARTS */
+
+function createHearts(number) {
+
+    for (let i = 0; i < number; i++) {
+
+        const heart = document.createElement("div");
+
+        heart.className = "heart";
+
+        const hearts = [
+            "❤️",
+            "💖",
+            "💕",
+            "💗",
+            "💐",
+            "✨",
+            "🌷"
+        ];
+
+        heart.innerHTML =
+            hearts[Math.floor(Math.random() * hearts.length)];
+
+        heart.style.left =
+            Math.random() * 100 + "vw";
+
+        heart.style.animationDuration =
+            (3 + Math.random() * 4) + "s";
+
+        heart.style.fontSize =
+            (18 + Math.random() * 25) + "px";
+
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+
+            heart.remove();
+
+        }, 7000);
+
+    }
+
+}
+
+
+/* CONFETTI */
+
+function createConfetti(number) {
+
+    for (let i = 0; i < number; i++) {
+
+        const piece = document.createElement("div");
+
+        piece.innerHTML = "🎉";
+
+        piece.style.position = "fixed";
+
+        piece.style.left =
+            Math.random() * 100 + "vw";
+
+        piece.style.top = "-30px";
+
+        piece.style.fontSize =
+            (15 + Math.random() * 25) + "px";
+
+        piece.style.zIndex = "1000";
+
+        piece.style.pointerEvents = "none";
+
+        document.body.appendChild(piece);
+
+        const fall = piece.animate(
+
+            [
+
+                {
+                    transform:
+                    "translateY(0) rotate(0deg)"
+                },
+
+                {
+                    transform:
+                    "translateY(110vh) rotate(720deg)"
+                }
+
+            ],
+
+            {
+
+                duration:
+                2500 + Math.random() * 2500,
+
+                easing: "linear"
+
+            }
+
+        );
+
+        fall.onfinish = () => {
+
+            piece.remove();
+
+        };
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
